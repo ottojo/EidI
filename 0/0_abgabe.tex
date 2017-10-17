@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{listings}
+
+\newcommand{\newlineparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\lstset{
+    literate={~} {$\sim$}{1}
+}
+
+\begin{document}
+
+\title{Blatt 0}
+\author{Jonas Otto}
+\maketitle
+
+\newlineparagraph{Aufgabe 0.1}
+  Java Version:
+  \begin{lstlisting}[language=bash]
+    jonas@jonas-UniEidI:~$ java -version
+    openjdk version "1.8.0_131"
+    OpenJDK Runtime Environment
+     (build 1.8.0_131-8u131-b11-2ubuntu1.17.04.3-b11)
+    OpenJDK 64-Bit Server VM (build 25.131-b11, mixed mode)
+
+    jonas@jonas-UniEidI:~$ javac -version
+    javac 1.8.0_131
+  \end{lstlisting}
+
+\newlineparagraph{Aufgabe 0.2}
+Das Programm gibt den Text "Hello World!" in der Konsole aus.
+
+\end{document}
