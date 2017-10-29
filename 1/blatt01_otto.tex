@@ -2,6 +2,19 @@
 
 \usepackage{amsmath}
 \usepackage{enumitem}
+
+\usepackage{listings}
+\lstset{literate=
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+
 \usepackage[utf8]{inputenc}
 
 \begin{document}
@@ -57,23 +70,33 @@
           \end{equation}
       \end{itemize}
     \subsection{Aufgabe 1.2}
-      \paragraph{Problemspezifikation} Die Preisspanne bei verschiedenen Angeboten
-      für ein Smartphone soll ermittelt werden.
-      \paragraph{Problemabstraktion} Gegeben ist eine Liste $p_1 \ldots p_n$ von Zahlen. Gesucht
-      ist die größtmögliche Differenz zwischen zwei Zahlen aus dieser Liste.
+      \paragraph{Problemspezifikation} Aus einer Vielzahl verschiedener Angebote
+        für ein Smartphone soll die Preisspanne berechnet werden.
+      \paragraph{Problemabstraktion} Gegeben ist eine Liste $p_1 \ldots p_n$ von
+        Zahlen, die dem Preis der Angebote entsprechen. Gesucht ist die
+        größtmögliche Differenz zwischen zwei Zahlen aus dieser Liste.
       \paragraph{Algorithmenentwurf} Die größte Differenz wird anhand der
       Differenz zwischen dem größten und kleinsten Element berechnet.\\
+      \begin{lstlisting}[mathescape=true]
+        setze $k = p_1$ //$k$: Kleinstes Element
+        setze $g = p_1$ //$g$: Größtes Element
+        setze $i = 1$
+        solange $i \leq n$:
+          wenn $p_i < k$, dann: $k = p_i$
+          wenn $p_i > g$, dann: $g = p_i$
+          erhöhe $i$ um $1$
+        Ausgabe von $(g - k)$
+      \end{lstlisting}
+      \paragraph{Korrekrheitsnachweis, Verifikation} Da die Preisspanne die
+        größtmögliche Differenz zwischen zwei Preisen ist, und der Algorithmus
+        die größte und kleinste Zahl durch Iteration über alle Zahlen findet,
+        ist dieser korrekt. Der Algorithmus terminiert, da er nur eine Schleife
+        enthält, die genau $n$ mal wiederholt.
+      \paragraph{Aufwandsanalyse} Die Schleife wird genau $n$ mal ausgeführt,
+      und in jeder Ausführung werden 2 Vergleiche ausgeführt. Der Algorithmus
+      benötigt daher $2n+3$ Schritte und steigt damit linear zur Anzahl der
+      Angebote an.
 
-      $k = p_1$\\
-      $g = p_1$\\
-      $i = 1$\\
-      solange $i \leq n$:\\
-        \- wenn $p_i < k$: $k = p_i$\\
-        \- wenn $p_i > g$: $g = p_i$\\
-      Ausgabe von $(g - k)$
-
-
-//TODO
 
 
 \end{document}
