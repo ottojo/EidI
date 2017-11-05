@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{literate=
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+\newcommand{\java}{\lstinline[language=Java]}
+
+%Blatt Nr
+\newcommand{\blattNr}{2}
+\setcounter{section}{\blattNr}
+
+\begin{document}
+    \title{EidI Übungsblatt \blattNr}
+    \author{Jonas Otto, Marco Deuscher}
+    \date{5. November 2017}
+    \maketitle
+
+    \section*{}
+        \subsection{}
+            \begin{lstlisting}[autogobble]
+                Setze zahl=random(1,20)
+                Setze tipp=0;
+                Setze i=1;
+                Solange (i<=3) Wiederhole:
+                    Ausgabe: "Geben sie ihren Tipp ein:"
+                    Lese die Eingabe in tipp ein.
+                    Falls (tipp>zahl)
+                        Ausgabe:
+                            "Ihr Tipp ist größer als die gesuchte Zahl."
+                        i=i+1;
+                    Falls(tipp<zahl)
+                        Ausgabe:
+                            "Ihr Tipp ist kleiner als die gesuchte Zahl."
+                        i=i+1;
+                    Falls(tipp==zahl)
+                        Ausgabe:
+                            "Sie haben die Zahl erraten." +
+                            "Die gesuchte Zahl war " + zahl;
+                        Beende Programm;
+                Ausgabe: "Die gesuchte Zahl war " + zahl +
+                    ". Sie waren nicht in der Lage, diese zu erraten."
+                Beende Programm;
+            \end{lstlisting}
+
+        \subsection{}
+            \begin{enumerate}[label=(\roman*)]
+                \item double: Es werden Nachkommastellen für cent benötigt
+                \item char: Eignet sich um ein einzelnes Symbol zu speichern
+                \item String: Geeignet um sowohl Zahlen als auch Buchstaben zu
+                    speichern
+                \item String: Anders als bei Zahlen gibt es hier keine
+                    Größenbeschränkung
+                \item boolean: Wahrheitswert mit zwei Möglichkeiten (Tür auf/Tür
+                    zu)
+                \item double: Fließkommazahl mit höherer Genauigkeit
+            \end{enumerate}
+
+        \subsection{}
+            \begin{lstlisting}
+                (A&&!A) ||  !(7!=9 && 21>42)
+            \end{lstlisting}
+            \java{(A&&!A)} ist immer wahr. Kann hier
+            ignoriert werden (Da oder Verknüpfung).\\
+            \java{(7!=9)} ist immer wahr. Kann hier
+            ignoriert werden (Da und Verknüpfung).\\
+            \java{(21>42)} ist immer falsch.\\
+            \java{!(21>42)} ist immer wahr.\\
+            Die gesamte Zeile kann durch \java{true}
+            Ersetzt werden.
+\end{document}
