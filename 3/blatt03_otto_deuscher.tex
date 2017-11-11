@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\newcommand{\blattNr}{3}
+\input{../eidiBlatt.tex}
+
+\begin{document}
+    \uebungsblattTitel
+
+    \section*{}
+        \subsection{}
+            \begin{lstlisting}[autogobble]
+                Setzte z = 1
+                Während z <= 100
+                    Setze t = (int) (z/2)
+                    Während t > 1
+                        Wenn z % t == 0, dann:
+                            Abbruch der Schleife
+                        t = t - 1
+                    Wenn t == 1, dann:
+                        Gib aus: z
+            \end{lstlisting}
+        \subsection{}
+            \begin{align}
+                \begin{split}
+                    3/5*-2&==3+5-2\\
+                    3/5*(-2)&==(3+5)-2\\
+                    (3/5)*(-2)&==(3+5)-2\\
+                    ((3/5)*(-2))&==((3+5)-2)
+                \end{split}
+            \end{align}
+
+            \begin{align}
+                \begin{split}
+                    \text{false}\ ||\ 8\ \%\ -3 &== 7 * 2\ \&\&\ \text{true}\\
+                    \text{false}\ ||\ 8\ \%\ (-3) &== (7 * 2)\ \&\&\ \text{true}\\
+                    \text{false}\ ||\ (8\ \%\ (-3)) &== (7 * 2)\ \&\&\ \text{true}\\
+                    (\text{false}\ ||\ (8\ \%\ (-3))) &== ((7 * 2)\ \&\&\ \text{true})
+                \end{split}
+            \end{align}
+\end{document}
