@@ -1,0 +1,26 @@
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{literate=
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1,
+    basicstyle=\small\ttfamily
+}
+\newcommand{\java}{\lstinline[language=Java]}
+
+\setcounter{section}{\blattNr}
+
+\newcommand{\uebungsblattTitel}{
+    \title{EidI Übungsblatt \blattNr}
+    \author{Jonas Otto, Marco Deuscher}
+    \maketitle
+}
