@@ -3,6 +3,12 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{lstautogobble}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{keyword}{HTML}{CB772F}
+\definecolor{string}{HTML}{A5C25C}
 
 \lstset{literate=
     {Ö}{{\"O}}1
@@ -13,7 +19,13 @@
     {ä}{{\"a}}1
     {ö}{{\"o}}1
     {~}{{\textasciitilde}}1,
-    basicstyle=\small\ttfamily
+    basicstyle=\small\ttfamily,
+    numbers=left,
+    breaklines=true,
+    commentstyle=\color{mygreen},
+    frame=single,
+    keywordstyle=\color{keyword},
+    stringstyle=\color{string}, 
 }
 \newcommand{\java}{\lstinline[language=Java]}
 

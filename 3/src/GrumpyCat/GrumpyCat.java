@@ -12,7 +12,7 @@ public class GrumpyCat {
             // Prüfen ob die Zahl durch 5 teilbar ist
             if (i % 5 == 0)
                 output += "cat";
-            // Wenn die Zahl weder durch 3 oder 5 teilbar ist soll die Zahö ausgegeben werden
+            // Wenn die Zahl weder durch 3 oder 5 teilbar ist soll die Zahl ausgegeben werden
             if (output.equals(""))
                 output += i;
             //Ausgabe des Ergebnisses
