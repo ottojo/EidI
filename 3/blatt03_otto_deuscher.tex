@@ -41,6 +41,28 @@
 
         \subsection{}
             % TODO 3.3
+            \begin{align}
+                \begin{split}
+                    System.out.println(0.3+0.3+0.3);
+                        Ausgabe: 0.8999999999999999
+                        Begründung: 
+                    System.out.println('a'+'b'+'c'+"!");
+                        Ausgabe: 294!
+                        Begründung: 'a','b','c' sind char und werden aufgrund des + Operators als Integer behandelt
+                                    entsprechend dem ASCII-Code ist a=97, b=98, c=99
+                                    "!" ist ein String und wird auch als solcher ausgegeben
+                    System.out.println(9/2);
+                        Ausgabe: 4
+                        Begründung: Es werden zwei Ganzzahlen durcheinander geteilt, folglich wird auch eine 
+                                    Ganzzahl als Ergebnis ausgegeben. Die Nachkommastellen werden abgeschnitten.
+                    System.out.println("Rechnung: " + 3 + -1 + 5);
+                        Ausgabe: Rechnung: 3-15
+                        Begründung: Da zuerst der String "Rechnung: " ausgegeben wird, wird alles folgende ebenfalls
+                                    als String behandelt. Wollte man mit den Zahlen noch eine Rechenoperation ausführen
+                                    müsste man entsprechend Klammern setzen.
+                             
+                \end{split}
+            \end{align}
 
         \subsection{}
             \lstinputlisting[language=Java]{src/GrumpyCat/GrumpyCat.java}
