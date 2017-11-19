@@ -1,12 +1,14 @@
 public class Decrypt {
 
     public static void main(String[] args) {
+        // Eingabe des verschlüsselten Textes
         TextIO.put("Please enter the ciphertext:");
         String ciphertext = TextIO.getlnString();
-        //Iterate over all possible rotations (93 is alphabet length)
+        // Über alle Rotationen iterieren (93 Möglichkeiten)
         for (int i = 1; i <= 93; i++) {
             TextIO.put("Rot " + i + ": ");
-            //Rotate in negative direction to decrypt
+            // Zum Entschlüsseln in negative Richtung rotieren
+            // (Siehe Crypto.java)
             TextIO.putln(Crypto.rotate(ciphertext, -i));
         }
     }
