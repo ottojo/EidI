@@ -3,6 +3,7 @@ public class NTuermeProblem {
 	public static void main(String[]args) {
 		//Groesse des Schachbrettes wird festgelegt
 		final int N = 8;
+		//NxN Array aus Boolean-Werten wird erstellt
 		boolean[][]brett = new boolean[N][N];
 		boolean korrekt = true;
 		
@@ -24,16 +25,16 @@ public class NTuermeProblem {
 				//wenn auf Feld ein Turm steht wird Counter erhöht 
 				if(brett[j][i])
 					colcounter++;
-				//Wenn in einer Reihe/Zeile mehr als ein Turm steht wird korrekt auf false gesetzt
+				//Wenn in einer Zeile mehr als ein Turm steht wird korrekt auf false gesetzt
 				if (colcounter>1) {
 					korrekt = false;
 					System.out.println("Mehr als ein Turm in der gleichen Spalte");
 					break;
 				}
-				//wenn auf Feld ein Turm steht wird Counter erhöh
+				//wenn auf Feld ein Turm steht wird Counter erhöht
 				if(brett[i][j])
 					rowcounter++;
-				//Wenn in einer Reihe/Zeile mehr als ein Turm steht wird korrekt auf false gesetzt
+				//Wenn in einer Reihe mehr als ein Turm steht wird korrekt auf false gesetzt
 				if(rowcounter>1) {
 					korrekt=false;
 					System.out.println("Mehr als ein Turm in der gleichen Zeile ");
