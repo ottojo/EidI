@@ -10,10 +10,12 @@ public class Main {
 
     }
 
-    //TODO remove duplicates
     public static void print42Sums(int[] inputArray) {
+        // Iteriere über Elemente des Arrays
         for (int i = 0; i < inputArray.length; i++) {
-            for (int b = 0; b < inputArray.length; b++) {
+            // Iteriere über verbleibende Elemente
+            for (int b = i; b < inputArray.length; b++) {
+                // Teste ob die Summe der Elemente 42 ergibt
                 if (i != b && inputArray[i] + inputArray[b] == 42)
                     System.out.println(inputArray[i] + "+" + inputArray[b] + "= 42");
             }
