@@ -1,10 +1,9 @@
-package test;
 
 public class Blatt06_4 {
 	public static void main(String[]args) {
 		//Array zum Testen der Methode
 		int[] test = new int[] {1,1,3,3,5,5,2,2,2,4,4,4,6,8,8,0,0,100,100};
-		//Ausgabe des zurückgegebenen Arrays
+		//Ausgabe des zurÃ¼ckgegebenen Arrays
 		for(int i=0;i<findDuplicates(test).length;i++) {
 			System.out.println(findDuplicates(test)[i]);
 		}
@@ -12,26 +11,26 @@ public class Blatt06_4 {
 	
 	
 	/** 
-	 * Sucht aus Eingabe-Array die doppelt vorhandenen Zahlen heraus und gibt diese in einem Array zurück
+	 * Sucht aus Eingabe-Array die doppelt vorhandenen Zahlen heraus und gibt diese in einem Array zurÃ¼ck
 	 * 
 	 * 
 	 * @param arg Integer Array mit den Zahlenwerten zwischen 0-100
 	 * @return Array mit allen doppelt vorhandenen Zahlen
 	 */
 	public static int[] findDuplicates(int[]arg) {
-		//Array in dem die Häufigkeit einer Zahl gespeichert wird
+		//Array in dem die HÃ¤ufigkeit einer Zahl gespeichert wird
 		int[]count = new int[101];
 		int len = 0;
-		//Interiert über Input-Array und erhöht jeweilige Zahl im count-Array
+		//Interiert Ã¼ber Input-Array und erhÃ¶ht jeweilige Zahl im count-Array
 		for(int i=0;i<arg.length;i++) {
 			count[arg[i]]++;
 		}
-		//Prüft wie viele doppelte Zahlen vorhanden sind, damit Array korrekte Länge hat
+		//PrÃ¼ft wie viele doppelte Zahlen vorhanden sind, damit Array korrekte LÃ¤nge hat
 		for(int z=0;z<count.length;z++) {
 			if(count[z]==2)
 				len++;
 		}
-		//erstellt Array das zurückgegeben wird
+		//erstellt Array das zurÃ¼ckgegeben wird
 		int[]duplicates = new int[len];
 		byte j=0;
 		//Schreibt alle Doppelt vorkommenden Zahlen ins neue Array
@@ -43,7 +42,7 @@ public class Blatt06_4 {
 			else {continue;
 			}
 		}
-		//Rückgabe des Arrays mit den Duplikaten
+		//RÃ¼ckgabe des Arrays mit den Duplikaten
 		return duplicates;
 	}
 
