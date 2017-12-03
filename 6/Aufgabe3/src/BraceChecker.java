@@ -3,6 +3,7 @@ public class BraceChecker {
     public static void main(String[] args) {
         System.out.println(checkBraces("((()())())"));
         System.out.println(checkBraces("(())())"));
+        System.out.print(checkBraces(")))((("));
     }
 
     /**
