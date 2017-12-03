@@ -1,10 +1,11 @@
-import java.util.Arrays;
-
 public class ArrayProduct {
 
     public static void main(String[] args) {
         int[] testData = {1, 2, 3, 4, 5, 6, 7};
-        System.out.println(Arrays.toString(arrayProduct(testData)));
+
+        for (int result : arrayProduct(testData)) {
+            System.out.println(result);
+        }
     }
 
     /**
