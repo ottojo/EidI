@@ -2,7 +2,8 @@ package Blatt07;
 
 public class Aufgabe3 {
 	public static void main(String[]args) {
-		final int X = 6;
+		//Beachte ab 47 kommt man im Integer Zahlenbereich in einen Überlauf
+		final int X = 8;
 		System.out.println(compFibIt(X));
 		System.out.println(compFibRec(X));
 		
@@ -10,13 +11,13 @@ public class Aufgabe3 {
 	/**
 	 * Iterative Methode um n-te Fibonacci Zahl zu berechnen
 	 * @param n Integer Wert der angibt die wie vielte Fibonacci Zahl berechnet werden soll
-	 * @return gibt n-te Fibonacci Zahl als Integer zurück
+	 * @return gibt n-te Fibonacci Zahl als Integer zurueck
 	 */
 	private static int compFibIt(int n) {
-		//Falls negatives n eingegeben wird, wird Fehlermeldung ausgegeben und 0 zurückgegeben
+		//Falls negatives n eingegeben wird, wird Fehlermeldung ausgegeben und -1 zurückgegeben
 		if(n<0) {
 			System.out.println("Negative Eingaben sind nicht erlaubt.");
-			return 0;
+			return -1;
 		}
 		//Falls n=0 wird 0 zurückgegeben
 		if(n==0)
@@ -26,7 +27,7 @@ public class Aufgabe3 {
 		int buf =1;
 		int speicher=0;
 		int i=0;
-		//Wiederholt sooft bis gesuchte Fibonacci Zahl erreicht wird. Addiert immer die beiden vorherigen Zahlen auf. (2 Ablage Variablen)
+		//Wiederholt so oft bis gesuchte Fibonacci Zahl erreicht wird. Addiert immer die beiden vorherigen Zahlen auf. (2 Ablage Variablen)
 		while(i<n) {
 			result=buf+speicher;
 			buf=speicher;
@@ -42,9 +43,17 @@ public class Aufgabe3 {
 	 * @return gibt n-te Fibonacci Zahl als Integer zurück
 	 */
 	private static int compFibRec(int result) {
-		//Abbruch sobald Basisfall erreicht [Basisfall: ersten zwei Zahlen 0 und 1]
-		if(result<=1)
-			return result;
+		//Prüft ob eingabe korrekt ist und gibt -1 zurück und gibt Fehler auf der Konsole aus.
+		if(result<0) {
+			System.out.println("Es gibte keine negative n-te Fibonacci Zahl");
+			return -1;
+		}
+		//0-te Fibonacci Zahl wird als 0 definiert.
+		if (result==0)
+			return 0;
+		//Abbruch sobald Basisfall erreicht
+		if(result<=2)
+			return 1;
 		else {
 			//Addiert die zwei vorherigen Zahlen auf
 			int buf = compFibRec(result-1)+compFibRec(result-2);
