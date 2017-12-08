@@ -25,14 +25,12 @@ public class Aufgabe3 {
 		
 		int result =0;
 		int buf =1;
-		int speicher=0;
-		int i=0;
+		int speicher=1;
 		//Wiederholt so oft bis gesuchte Fibonacci Zahl erreicht wird. Addiert immer die beiden vorherigen Zahlen auf. (2 Ablage Variablen)
-		while(i<n) {
+		for(int i=1;i<n-1;i++) {
 			result=buf+speicher;
 			buf=speicher;
 			speicher=result;
-			i++;
 		}
 		return result;
 	}
