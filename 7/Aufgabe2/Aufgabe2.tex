@@ -1,0 +1,67 @@
+\documentclass{article}
+\newcommand{\blattNr}{7}
+\input{../../eidiBlatt.tex}
+\begin{document}
+    \uebungsblattTitel
+    \paragraph{Methode1}
+    \ \\
+    \begin{lstlisting}[language=Java, autogobble]
+    static int methode1(int[] arr){
+        int min = 100;
+        int minidx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]< min ){
+            minidx = i;
+            }
+        }
+        return minidx ;
+    }
+    \end{lstlisting}
+
+    \begin{tabular}{r|l}
+        Zeile & Schritte \\
+        \hline
+        2 & 1 \\
+        3 & 1 \\
+        4 & 1, arr.length + 1, arr.length \\
+        5 & arr.length \\
+        6 & Worst case: arr.length \\
+        \hline
+        Summe & $T(\text{arr})=4+4*\text{arr.length} = O(\text{arr.length})$
+    \end{tabular}
+
+    \paragraph{Methode2}
+    \ \\
+    \begin{lstlisting}[language=Java, autogobble]
+    static int methode2(int n) {
+        int count = 2;
+        for (int i = 1; i <= n; i++) {
+            for (int j= n; j > i; j--) {
+                count++;
+            }
+        }
+        return count;
+    }
+    \end{lstlisting}
+
+    \begin{tabular}{r|l}
+        Zeile & Schritte \\
+        \hline
+        2 & 1 \\
+        3 & 1, $n + 1$, $n$ \\
+        4 & $n$, $n$ \\
+        5 & $n^2 + 1$ (1)\\
+        \hline
+        Summe & $T(n)=n^2+4n+4 = O(n^2)$
+    \end{tabular}
+
+    \vspace{1cm}
+    In for schleife:
+    \begin{eqnarray}
+        n + 2 \cdot \sum_{i=1}^nn-i \enspace + 1
+        &=& n + 2 \cdot (\sum_{i=1}^nn - \sum_{i=1}^ni) + 1 \nonumber\\
+        &=& n + 2n^2 - 2 \cdot (\frac{n^2}{2} + \frac{n}{2}) +1 \nonumber\\
+        &=& n^2 +1
+    \end{eqnarray}
+
+\end{document}
