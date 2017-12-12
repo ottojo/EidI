@@ -5,7 +5,7 @@ public class binomialkoeffizient {
 		System.out.println(compBinom(15,3));
 	}
 	/**
-	 * Methode berechnet Binom. Koeff. rekursiv (n über k)
+	 * Methode berechnet Binom. Koeff. rekursiv (n ueber k)
 	 * @param n Integer Wert (oberer Wert im Binom.Koeff.)
 	 * @param k Integer Wert (unterer Wert im Binom.Koeff)
 	 * @return gibt Ergebnis des Binom.Koeff. als Integer zurueck
