@@ -36,16 +36,29 @@ public class Turtle extends Application {
         kochSchneeflocke(300, 4);
     }
 
+    /**
+     * Zeichnet eine Koch-Schneeflocke bestehend aus drei Koch-Kurven an den Seiten
+     * eines gleichseitigen Dreiecks
+     *
+     * @param len  Seitenlänge des Dreiecks
+     * @param deep Rekursionstiefe
+     */
     public void kochSchneeflocke(double len, int deep) {
-        koch(len, deep);
-        turn(120);
-        koch(len, deep);
-        turn(120);
-        koch(len, deep);
+        for (int i = 0; i < 3; i++) {
+            koch(len, deep);
+            turn(120);
+        }
     }
 
+    /**
+     * Zeichnet eine Koch-Kurve
+     *
+     * @param len  Breite der gesamten Kurve
+     * @param deep Rekursionstiefe
+     */
     public void koch(double len, int deep) {
         if (deep > 0) {
+            // Rekursion wird weitergeführt
             koch(len / 3, deep - 1);
             turn(-60);
             koch(len / 3, deep - 1);
@@ -54,6 +67,8 @@ public class Turtle extends Application {
             turn(-60);
             koch(len / 3, deep - 1);
         } else {
+            // Rekursion wird abgebrochen, da gewünschte Rekursionstiefe erreicht ist
+            // -> Gerade statt weiterem Dreieck zeichnen
             forward(len);
         }
     }
