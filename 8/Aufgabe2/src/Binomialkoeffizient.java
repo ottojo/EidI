@@ -1,5 +1,3 @@
-package blatt08;
-
 public class Binomialkoeffizient {
     public static void main(String[] args) {
         System.out.println(binom(15, 3));
