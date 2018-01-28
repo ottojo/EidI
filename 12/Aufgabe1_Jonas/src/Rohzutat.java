@@ -1,6 +1,7 @@
 public class Rohzutat {
-    private int preisProKiloCents;
     private String name;
+
+    private int preisProKiloCents;
 
     public Rohzutat(String name, int preisProKiloCents) {
         this.preisProKiloCents = preisProKiloCents;

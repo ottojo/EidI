@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Rohzutaten
         Rohzutat potatos = new Rohzutat("potatos", 150);
         Rohzutat carrots = new Rohzutat("carrots", 80);
         Rohzutat zuccini = new Rohzutat("zuccini", 180);
@@ -10,6 +11,7 @@ public class Main {
         Rohzutat honey = new Rohzutat("honey", 2800);
         Rohzutat yoghurt = new Rohzutat("yoghurt", 1400);
 
+        //Rezepte
         Rezept potatoSoup = new Rezept("potato soup", new Zutat[]{
                 new Zutat(cream, null, 200),
                 new Zutat(potatos, "diced", 300)});

@@ -23,6 +23,11 @@ public class Rezept {
         return name + zutatenString;
     }
 
+    /**
+     * Berechnet den Preis des Rezeptes
+     *
+     * @return Preis des Rezeptes in Cent
+     */
     public int getPrice() {
         int total = 0;
         for (Zutat z : this.zutaten) {

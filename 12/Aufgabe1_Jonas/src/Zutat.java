@@ -9,6 +9,11 @@ public class Zutat {
         this.mengeGramm = mengeGramm;
     }
 
+    /**
+     * Berechnet den Preis der Zutat inklusive 30% Marge
+     *
+     * @return Preis * 1.3 in Cents
+     */
     public int getPrice() {
         return (int) ((mengeGramm / 1000.0) * rohzutat.getPreisProKiloCents() * 1.3);
     }

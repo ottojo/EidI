@@ -16,6 +16,11 @@ public class Menu {
         this.dessert = dessert;
     }
 
+    /**
+     * Berechnet den Preis des Menüs in Cent
+     *
+     * @return Gesamtpreis in Cent
+     */
     public int getPrice() {
         int total = 0;
         total += this.vorspeise.getPrice()
@@ -49,6 +54,11 @@ public class Menu {
         return result;
     }
 
+    /**
+     * Berechnet den Preis des Hauptgerichtes mit Beilagen
+     *
+     * @return Preis von Hauptgericht + Beilagen in Cent
+     */
     private int getHauptgerichtTotalPrice() {
         int total = this.hauptgericht.getPrice();
         for (Rezept beilage : this.beilagen) {
