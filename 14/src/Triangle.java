@@ -1,11 +1,11 @@
 //package blatt14;
 
 
-public class Rectangle extends Shape {
+public class Triangle extends Shape {
 	double height;
 	double width;
 	
-	Rectangle(double height, double width){
+	Triangle(double height, double width){
 		this.height = height;
 		this.width = width;
 		this.edges = 3;

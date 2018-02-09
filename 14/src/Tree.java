@@ -45,5 +45,24 @@ public class Tree {
 		else
 			throw new NullPointerException();
 	}
-
+	
+	Node getNode(Shape s) {
+		return getNode(s,root);
+	}
+	private Node getNode(Shape s, Node node) {
+		if(node==null) {
+			return null;
+		}
+		if(node.shape==s)
+			return node;
+		else {
+			Node result = getNode(s,node.left);
+			if(result==null)
+				result = getNode(s,node.right);
+			return result;
+		}
+	}
+	
 }
+
+
