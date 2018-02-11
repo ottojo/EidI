@@ -57,18 +57,18 @@ public class Node {
      * @return true if shape has been deleted
      */
     boolean delete(Shape s) {
-        if (left.shape == s) {
+        if (left != null && left.shape == s) {
             Node rightNode = left.right;
             left = left.left;
             left.insertAllChildren(rightNode);
             return true;
-        } else if (right.shape == s) {
+        } else if (right != null && right.shape == s) {
             Node rightNode = right.right;
             right = right.left;
             right.insertAllChildren(rightNode);
             return true;
         } else {
-            return left.delete(s) || right.delete(s);
+            return (left != null && left.delete(s)) || (right != null && right.delete(s));
         }
     }
 }
